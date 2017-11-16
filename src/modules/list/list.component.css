@@ -1,0 +1,19 @@
+:host {
+  display: flex;
+  padding: 5%;
+}
+
+.header {
+  color: #EC167F;
+  font-size: 30px;
+}
+
+.left, .right {
+  width: 40%;
+  padding: 20px;
+}
+
+.process {
+  color: #000;
+  font-size: 24px;
+}

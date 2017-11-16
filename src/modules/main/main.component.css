@@ -1,0 +1,23 @@
+:host {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.start-link {
+  font-size: 40px;
+  font-weight: 700;
+
+  color: #EC167F;
+  text-decoration: none;
+
+  transition: color .4s ease-in;
+}
+
+.start-link:hover {
+  color: #000;
+}

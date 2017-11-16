@@ -1,0 +1,36 @@
+.link {
+  margin: 7px 0;
+  padding: 10px 15px;
+  display: inline-block;
+
+  font-size: 16px;
+  color: #000;
+  text-decoration: none;
+
+  border: 1px solid #000;
+
+  transition: all .4s ease-in;
+}
+
+.link:hover {
+  color: #000;
+  border-color: #EC167F;
+  background: #EC167F;
+}
+
+.button {
+  width: 40px;
+  height: 40px;
+
+  font-size: 18px;
+
+  border: none;
+  background: transparent;
+}
+
+.input {
+  width: 80%;
+  height: 40px;
+
+  border: 1px solid #000;
+}

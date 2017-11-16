@@ -1,0 +1,20 @@
+<form [formGroup]="form" novalidate class="form">
+  <ng-container *ngIf="isEdit">
+    <input
+      type="text"
+      [formControlName]="controls.TITLE"
+      class="input">
+  </ng-container>
+
+  <ng-container *ngIf="!isEdit">
+
+    <a [routerLink]="[item.id, 'detail']" class="link">
+      {{form.get(controls.TITLE).value}}
+    </a>
+
+  </ng-container>
+
+  <button type="button"
+          (click)="toggleEdit()"
+          class="button">{{isEdit ? '&#9786;' : '&#9783;'}}</button>
+</form>

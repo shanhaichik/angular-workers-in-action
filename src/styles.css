@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+
+  font-family: 'Helvetica Neue' , Helvetica, Arial, sans-serif;
+
+  background-color: #ccc;
+}
+
+/*
+5border: 5px solid #EC167F;*/

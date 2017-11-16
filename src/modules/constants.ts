@@ -1,0 +1,1 @@
+export const VALUE_CHANGE_DEBOUNCE_TIME = 300;

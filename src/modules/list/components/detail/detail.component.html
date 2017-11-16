@@ -1,0 +1,21 @@
+<form [formGroup]="form" novalidate>
+  <h2 class="header">
+    Детальная информация <a [routerLink]="['/list']" class="back">X</a>
+  </h2>
+
+  <ng-container *ngIf="isEdit">
+    <textarea [formControlName]="controls.DESCRIPTION" class="textarea"></textarea>
+
+    <input type="file" (change)="onFileChange($event)" >
+  </ng-container>
+
+  <ng-container *ngIf="!isEdit">
+    <div class="content">{{form.get(controls.DESCRIPTION).value}}</div>
+
+    <img [src]="detailInfo.url"
+         *ngIf="detailInfo.url"
+         class="image">
+  </ng-container>
+
+  <button type="button" class="button" (click)="toggleEdit()">{{isEdit ? '&#9786;' : '&#9783;'}}</button>
+</form>

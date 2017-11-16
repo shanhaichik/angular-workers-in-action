@@ -1,0 +1,15 @@
+<div class="left">
+  <h1 class="header">Список покупок</h1>
+
+  <div class="process" *ngIf="inProgress">Загрузка</div>
+
+  <app-item
+    *ngFor="let item of list"
+    [item]="item"
+    (onUpdate)="onUpdateItem($event)"></app-item>
+</div>
+
+<div class="right">
+  <router-outlet></router-outlet>
+</div>
+
