@@ -8,7 +8,7 @@
 
   <ng-container *ngIf="!isEdit">
 
-    <a [routerLink]="[item.id, 'detail']" class="link">
+    <a [routerLink]="['/list', item.id, 'detail']" class="link">
       {{form.get(controls.TITLE).value}}
     </a>
 

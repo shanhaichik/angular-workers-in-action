@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder, FormGroup} from '@angular/forms';
 
 import { ApiService } from '../../../../services/api.service';
@@ -32,11 +32,21 @@ export class DetailComponent implements OnInit {
   constructor(private api: ApiService,
               private store: StoreService,
               private activatedRoute: ActivatedRoute,
-              private fb: FormBuilder) { }
+              private fb: FormBuilder,
+              private router: Router) { }
 
   ngOnInit() {
-    const {id} = this.activatedRoute.snapshot.params;
+    this.activatedRoute.params.subscribe(params => {
+      this.init(params.id);
+    });
+  }
+
+  init(id: string) {
     this.detailInfo = this.store.getItem(+id);
+
+    if (!this.detailInfo) {
+      return this.router.navigate(['/list']);
+    }
 
     this.form = this.fb.group({
       [controls.DESCRIPTION]: [this.detailInfo.description]
@@ -47,7 +57,7 @@ export class DetailComponent implements OnInit {
       .debounceTime(VALUE_CHANGE_DEBOUNCE_TIME)
       .takeUntil(this.destroyStream)
       .subscribe(item => {
-          this.api.updateItem(Object.assign({}, this.detailInfo, item));
+        this.api.updateItem(Object.assign({}, this.detailInfo, item));
       });
   }
 
